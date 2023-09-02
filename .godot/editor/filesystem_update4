@@ -1,0 +1,12 @@
+res://Utility/enemy_spawner.tscn
+res://Utility/enemy_spawner.gd
+res://World/world.tscn
+res://Player/player.tscn
+res://Enemy/enemy.tscn
+res://Utility/hitbox.tscn
+res://Utility/hurtbox.tscn
+res://Enemy/enemy.gd
+res://Player/Attack/ice_spear.tscn
+res://Player/Attack/ice_spear.gd
+res://Player/player.gd
+res://Utility/hurtbox.gd
