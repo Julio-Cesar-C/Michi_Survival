@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://World/Barrel/Barrel.gd" id="1_obbef"]
 [ext_resource type="Texture2D" uid="uid://oj1dc0sg10jv" path="res://Textures/Barrel/barrel2.png" id="1_yh1xu"]
-[ext_resource type="AudioStream" uid="uid://k1vxhfvu1uhg" path="res://Audio/SoundEffect/enemy_death.ogg" id="3_lo5xa"]
+[ext_resource type="AudioStream" uid="uid://hfhyvihw683k" path="res://Audio/SoundEffect/barrel/explosao_faustao1.wav" id="3_yxf0t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnvxk"]
 radius = 9.83607
@@ -42,7 +42,7 @@ scale = Vector2(0.733236, 0.745016)
 shape = SubResource("CapsuleShape2D_jnvxk")
 
 [node name="explosion_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_lo5xa")
-pitch_scale = 5.0
+stream = ExtResource("3_yxf0t")
+volume_db = -20.0
 
 [connection signal="body_entered" from="AreaColisao" to="." method="_on_area_2d_body_entered"]

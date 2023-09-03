@@ -11,3 +11,4 @@ res://World/Barrel/Barrel.gd
 res://Enemy/enemy.gd
 res://World/Barrel/Area2D2.gd
 res://World/Barrel/CollisionShape2D.gd
+res://Player/Attack/ice_spear.gd
