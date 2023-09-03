@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://f11bjjmnucfe"]
+[gd_scene load_steps=6 format=3 uid="uid://f11bjjmnucfe"]
 
 [ext_resource type="Texture2D" uid="uid://ul3kgy1fcjc4" path="res://Textures/dirt_full_new.png" id="1_eyp4y"]
 [ext_resource type="PackedScene" uid="uid://dc5idfx3sqslo" path="res://Player/player.tscn" id="2_573f7"]
+[ext_resource type="PackedScene" uid="uid://d12b7afiqjocc" path="res://World/Barrel/Barrel.tscn" id="2_oniam"]
 [ext_resource type="PackedScene" uid="uid://dwskanohql2qt" path="res://Utility/enemy_spawner.tscn" id="3_id8fh"]
+[ext_resource type="AudioStream" uid="uid://dibd4p5wghny2" path="res://Audio/Music/battleThemeA.mp3" id="5_6c1pv"]
 
 [node name="World" type="Node2D"]
 
@@ -16,3 +18,185 @@ region_rect = Rect2(0.98, 0.142, 4000, 4000)
 [node name="Player" parent="." instance=ExtResource("2_573f7")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_id8fh")]
+
+[node name="Barrel" parent="." instance=ExtResource("2_oniam")]
+position = Vector2(63, -2)
+
+[node name="Barrel10" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-757, -714)
+
+[node name="Barrel11" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-1650, -926)
+
+[node name="Barrel12" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-614, -980)
+
+[node name="Barrel13" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-1340, -1329)
+
+[node name="Barrel14" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-852, -318)
+
+[node name="Barrel15" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-1284, -260)
+
+[node name="Barrel16" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-715, -230)
+
+[node name="Barrel17" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-1147, -172)
+
+[node name="Barrel" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(137, 88)
+
+[node name="Barrel3" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-211, -226)
+
+[node name="Barrel4" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(274, 176)
+
+[node name="Barrel5" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-158, 234)
+
+[node name="Barrel6" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(42, 484)
+
+[node name="Barrel7" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-390, 542)
+
+[node name="Barrel8" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(365, 680)
+
+[node name="Barrel9" parent="Barrel" instance=ExtResource("2_oniam")]
+position = Vector2(-253, 630)
+
+[node name="Barrel10" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-655, -312)
+
+[node name="Barrel11" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-1087, -254)
+
+[node name="Barrel12" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-518, -224)
+
+[node name="Barrel13" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-950, -166)
+
+[node name="Barrel14" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-750, 84)
+
+[node name="Barrel15" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-1182, 142)
+
+[node name="Barrel16" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-613, 172)
+
+[node name="Barrel17" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-1045, 230)
+
+[node name="Barrel" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(239, 490)
+
+[node name="Barrel3" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-193, 548)
+
+[node name="Barrel4" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(376, 578)
+
+[node name="Barrel5" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-56, 636)
+
+[node name="Barrel6" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(144, 886)
+
+[node name="Barrel7" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-288, 944)
+
+[node name="Barrel8" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(281, 974)
+
+[node name="Barrel9" parent="Barrel/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-151, 1032)
+
+[node name="Barrel10" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(987, -3105)
+
+[node name="Barrel11" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(555, -3047)
+
+[node name="Barrel12" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1124, -3017)
+
+[node name="Barrel13" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(692, -2959)
+
+[node name="Barrel14" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(892, -2709)
+
+[node name="Barrel15" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(460, -2651)
+
+[node name="Barrel16" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1029, -2621)
+
+[node name="Barrel17" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(597, -2563)
+
+[node name="Barrel" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1881, -2303)
+
+[node name="Barrel3" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1449, -2245)
+
+[node name="Barrel4" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(2018, -2215)
+
+[node name="Barrel5" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1586, -2157)
+
+[node name="Barrel6" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1786, -1907)
+
+[node name="Barrel7" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1354, -1849)
+
+[node name="Barrel8" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1923, -1819)
+
+[node name="Barrel9" parent="Barrel/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(1491, -1761)
+
+[node name="Barrel10" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(136, 634)
+
+[node name="Barrel11" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-296, 692)
+
+[node name="Barrel12" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(273, 722)
+
+[node name="Barrel13" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-159, 780)
+
+[node name="Barrel14" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(41, 1030)
+
+[node name="Barrel15" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-391, 1088)
+
+[node name="Barrel16" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(178, 1118)
+
+[node name="Barrel17" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-254, 1176)
+
+[node name="Barrel" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(-43, 1778)
+
+[node name="Barrel3" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
+position = Vector2(598, 1494)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6c1pv")
+volume_db = -30.0
+autoplay = true

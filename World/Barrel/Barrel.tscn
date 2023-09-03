@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://d12b7afiqjocc"]
+
+[ext_resource type="Script" path="res://World/Barrel/Barrel.gd" id="1_obbef"]
+[ext_resource type="Texture2D" uid="uid://oj1dc0sg10jv" path="res://Textures/Barrel/barrel2.png" id="1_yh1xu"]
+[ext_resource type="AudioStream" uid="uid://hfhyvihw683k" path="res://Audio/SoundEffect/barrel/explosao_faustao1.wav" id="3_yxf0t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnvxk"]
+radius = 9.83607
+height = 31.5617
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_obbef")
+
+[node name="Barrel2" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_yh1xu")
+
+[node name="AreaColisao" type="Area2D" parent="."]
+scale = Vector2(34.5744, 16.2736)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2DDentro" type="CollisionShape2D" parent="AreaColisao"]
+position = Vector2(0, 0.0789042)
+scale = Vector2(-0.0401825, 0.0764353)
+shape = SubResource("CapsuleShape2D_jnvxk")
+
+[node name="AreaExplosao" type="Area2D" parent="."]
+scale = Vector2(10.48, 7.2)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2DDentro" type="CollisionShape2D" parent="AreaExplosao"]
+position = Vector2(0, 1)
+scale = Vector2(1.125, 1.125)
+shape = SubResource("CapsuleShape2D_jnvxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.733236, 0.745016)
+shape = SubResource("CapsuleShape2D_jnvxk")
+
+[node name="explosion_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yxf0t")
+volume_db = -20.0
+
+[connection signal="body_entered" from="AreaColisao" to="." method="_on_area_2d_body_entered"]
