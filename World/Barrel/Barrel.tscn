@@ -43,8 +43,6 @@ shape = SubResource("CapsuleShape2D_jnvxk")
 
 [node name="explosion_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lo5xa")
-volume_db = 10.0
 pitch_scale = 5.0
-autoplay = true
 
 [connection signal="body_entered" from="AreaColisao" to="." method="_on_area_2d_body_entered"]
