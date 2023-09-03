@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://d12b7afiqjocc"]
+
+[ext_resource type="Script" path="res://World/Barrel/Barrel.gd" id="1_obbef"]
+[ext_resource type="Texture2D" uid="uid://oj1dc0sg10jv" path="res://Textures/Barrel/barrel2.png" id="1_yh1xu"]
+
+[sub_resource type="GDScript" id="GDScript_jr86s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jnvxk"]
+radius = 8.24757
+height = 28.0
+
+[sub_resource type="GDScript" id="GDScript_pr4y0"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_area_2d_body_entered(object):
+	print(object.name)
+	if \"@CharacterBody2D@\" in object.name:
+		destruirObjetosDoTipo()
+	pass # Replace with function body.
+	
+"
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_obbef")
+
+[node name="Barrel2" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_yh1xu")
+
+[node name="Area2D2" type="Area2D" parent="."]
+scale = Vector2(5.88, 3.56)
+collision_layer = 0
+collision_mask = 6
+script = SubResource("GDScript_jr86s")
+
+[node name="CollisionShape2DDentro" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_jnvxk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_jnvxk")
+script = SubResource("GDScript_pr4y0")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]

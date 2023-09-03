@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://f11bjjmnucfe"]
+[gd_scene load_steps=5 format=3 uid="uid://f11bjjmnucfe"]
 
 [ext_resource type="Texture2D" uid="uid://ul3kgy1fcjc4" path="res://Textures/dirt_full_new.png" id="1_eyp4y"]
 [ext_resource type="PackedScene" uid="uid://dc5idfx3sqslo" path="res://Player/player.tscn" id="2_573f7"]
+[ext_resource type="PackedScene" uid="uid://d12b7afiqjocc" path="res://World/Barrel/Barrel.tscn" id="2_oniam"]
 [ext_resource type="PackedScene" uid="uid://dwskanohql2qt" path="res://Utility/enemy_spawner.tscn" id="3_id8fh"]
 
 [node name="World" type="Node2D"]
@@ -16,3 +17,6 @@ region_rect = Rect2(0.98, 0.142, 4000, 4000)
 [node name="Player" parent="." instance=ExtResource("2_573f7")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_id8fh")]
+
+[node name="Barrel" parent="." instance=ExtResource("2_oniam")]
+position = Vector2(63, -2)
