@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://f11bjjmnucfe"]
+[gd_scene load_steps=6 format=3 uid="uid://f11bjjmnucfe"]
 
 [ext_resource type="Texture2D" uid="uid://ul3kgy1fcjc4" path="res://Textures/dirt_full_new.png" id="1_eyp4y"]
 [ext_resource type="PackedScene" uid="uid://dc5idfx3sqslo" path="res://Player/player.tscn" id="2_573f7"]
 [ext_resource type="PackedScene" uid="uid://d12b7afiqjocc" path="res://World/Barrel/Barrel.tscn" id="2_oniam"]
 [ext_resource type="PackedScene" uid="uid://dwskanohql2qt" path="res://Utility/enemy_spawner.tscn" id="3_id8fh"]
+[ext_resource type="AudioStream" uid="uid://dibd4p5wghny2" path="res://Audio/Music/battleThemeA.mp3" id="5_6c1pv"]
 
 [node name="World" type="Node2D"]
 
@@ -194,3 +195,8 @@ position = Vector2(-43, 1778)
 
 [node name="Barrel3" parent="Barrel/Barrel9/Barrel9/Barrel9" instance=ExtResource("2_oniam")]
 position = Vector2(598, 1494)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6c1pv")
+volume_db = -30.0
+autoplay = true

@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Area2D
 CollisionShape2D
 StaticBody2D
@@ -5,7 +6,6 @@ Node
 RigidBody2D
 Timer
 Node2D
-AudioStreamPlayer
 Sprite2D
 AnimationPlayer
 Camera2D
