@@ -5,18 +5,32 @@ var mov_speed = 40.0
 
 var hp = 80
 
+var last_movement = Vector2.UP
+
+
 #Os Ataques:
 var iceSpear = preload("res://Player/Attack/ice_spear.tscn")
+var tornado = preload("res://Player/Attack/tornado.tscn")
 
 # Attacks nodes
 @onready var iceSpearTimer = get_node("%IceSpearTime")
 @onready var iceSpearAttackTimer = get_node("%IceSpearAttackTimer")
+@onready var tornadoTimer = get_node("%TornadoTimer")
+@onready var tornadoAttackTimer = get_node("%TornadoAttackTimer")
 
 #IceSpear
 var icespear_ammo =0
 var icespear_baseamoo = 1
 var icespear_attackspeed = 1.5
 var icespear_level = 1
+
+#tornado
+
+var tornado_ammo =0
+var tornado_baseamoo = 1
+var tornado_attackspeed = 3
+var tornado_level = 1
+
 
 # Enemygo proximo
 var enemy_close = []
@@ -41,7 +55,10 @@ func attack():
 		iceSpearTimer.wait_time = icespear_attackspeed
 		if iceSpearTimer.is_stopped():
 			iceSpearTimer.start()
-
+	if tornado_level > 0:
+		tornadoTimer.wait_time = tornado_attackspeed
+		if tornadoTimer.is_stopped():
+			tornadoTimer.start()
 
 
 
@@ -63,7 +80,8 @@ func movement():
 	if mov.y or mov.x != 0:
 		anim.play("Walk")
 	else: anim.play("RESET")
-	#if mov != Vector2.ZERO:
+	if mov != Vector2.ZERO:
+		last_movement = mov
 	#	if walkTimer.is_stopped():
 	#		if sprite.frame >= sprite.hframes -1:
 	#			sprite.frame = 0
@@ -78,7 +96,7 @@ func movement():
 	move_and_slide()
 
 
-func _on_hurtbox_hurt(damage):
+func _on_hurtbox_hurt(damage, _angle, _knockback):
 	hp -= damage
 	print(hp)
 
@@ -101,6 +119,29 @@ func _on_ice_spear_attack_timer_timeout():
 		else:
 			iceSpearAttackTimer.stop()
 
+
+func _on_tornado_timer_timeout():
+	tornado_ammo += tornado_baseamoo
+	tornadoAttackTimer.start()
+
+
+func _on_tornado_attack_timer_timeout():
+	if tornado_ammo > 0:
+		var tornado_attack = tornado.instantiate()
+		tornado_attack.position = position
+		tornado_attack.last_moviment = last_movement
+	
+		tornado_attack.level = tornado_level 
+		add_child(tornado_attack)
+		tornado_ammo -= 1
+		if tornado_ammo > 0 :
+			tornadoAttackTimer.start()
+		else:
+			tornadoAttackTimer.stop()
+
+
+
+
 func get_random_target():
 	if enemy_close.size() > 0:
 		return enemy_close.pick_random().global_position
@@ -117,3 +158,5 @@ func _on_enemy_detection_area_body_exited(body):
 	if enemy_close.has(body):
 		enemy_close.erase(body)
 	
+
+

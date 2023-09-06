@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcc7nnf0jfvbx"]
+[gd_scene load_steps=12 format=3 uid="uid://bcc7nnf0jfvbx"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_55g75"]
 [ext_resource type="Texture2D" uid="uid://4dcy565inwx2" path="res://Textures/Enemy/pipo-nekonin021.png" id="1_oqqwe"]
 [ext_resource type="PackedScene" uid="uid://bn8isi6klgfbd" path="res://Utility/hurtbox.tscn" id="3_xxqkw"]
 [ext_resource type="PackedScene" uid="uid://dhyeoww8rxa4y" path="res://Utility/hitbox.tscn" id="4_fsnet"]
+[ext_resource type="AudioStream" uid="uid://djjify4h1c5p3" path="res://Audio/SoundEffect/enemy_hit.ogg" id="5_7fh0c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nnee"]
 radius = 8.0
@@ -77,6 +78,7 @@ libraries = {
 visible = false
 collision_layer = 4
 collision_mask = 4
+HurtBoxType = 1
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0.5, 1.5)
@@ -89,6 +91,10 @@ collision_mask = 2
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_f7xgu")
+
+[node name="snd_hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7fh0c")
+volume_db = -20.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 
