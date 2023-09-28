@@ -3,12 +3,9 @@ res://Enemy/enemy.tscn
 res://Player/player.tscn
 res://Player/Attack/ice_spear.tscn
 res://World/world.tscn
-res://Player/Attack/ice_spear.gd
 res://Utility/hurtbox.tscn
-res://Utility/hurtbox.gd
-res://Enemy/enemy.gd
-res://Player/player.gd
 res://Enemy/explosion.tscn
-res://Enemy/explosion.gd
 res://Player/Attack/tornado.tscn
-res://Player/Attack/tornado.gd
+res://Player/Attack/javelin.tscn
+res://Player/Attack/javelin.gd
+res://Player/player.gd
