@@ -7,6 +7,10 @@ var hp = 80
 
 var last_movement = Vector2.UP
 
+var exp = 0
+var exp_lvl = 1
+var collected_exp = 0
+
 
 #Os Ataques:
 var iceSpear = preload("res://Player/Attack/ice_spear.tscn")
@@ -37,7 +41,7 @@ var tornado_attackspeed = 3
 var tornado_level = 1
 
 #Javelin
-var javelin_ammo = 1
+var javelin_ammo = 2
 var javelin_level = 1
 
 
@@ -53,10 +57,16 @@ var enemy_close = []
 @onready var anim = $AnimationPlayer
 
 
+#GUI
+@onready var expBar = get_node("%ExpBar")
+@onready var lblLevel = get_node("%lbl_level")
+
+
 func _ready():
 	attack()
 	#anim.play("RESET")
 	anim.play("Walk")
+	set_expBar(exp, calculate_expcap())
 	
 		
 	
@@ -183,5 +193,51 @@ func _on_enemy_detection_area_body_exited(body):
 	if enemy_close.has(body):
 		enemy_close.erase(body)
 	
+
+
+
+
+func _on_grab_area_area_entered(area):
+	if area.is_in_group("loot"):
+		area.target = self
+
+
+func _on_collect_area_area_entered(area):
+	if area.is_in_group("loot"):
+		var gem_exp = area.collect()
+		calculate_exp(gem_exp)
+		
+
+func calculate_exp(gem_exp):
+	var exp_required = calculate_expcap()
+	collected_exp += gem_exp
+	if exp + collected_exp >= exp_required: #level up
+		collected_exp -= exp_required - exp
+		exp_lvl += 1
+		lblLevel.text = str("Level: ", exp_lvl)
+		exp = 0
+		exp_required = calculate_expcap()
+		calculate_exp(0)
+	else:
+		exp += collected_exp
+		collected_exp = 0
+		
+	set_expBar(exp, exp_required)
+	
+func calculate_expcap():
+	var exp_cap = exp_lvl
+	if exp_lvl < 20:
+		exp_cap = exp_lvl * 5
+	elif exp_lvl < 40:
+		exp_cap + 95  * (exp_lvl - 19 ) * 8
+	else:
+		exp_cap = 255 + (exp_lvl-39) * 12
+	return exp_cap
+
+
+
+func set_expBar(set_value= 1 , set_max_value = 100):
+	expBar.value = set_value
+	expBar.max_value = set_max_value
 
 

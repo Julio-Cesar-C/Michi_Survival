@@ -200,3 +200,5 @@ position = Vector2(598, 1494)
 stream = ExtResource("5_6c1pv")
 volume_db = -30.0
 autoplay = true
+
+[node name="Loot" type="Node2D" parent="." groups=["loot"]]

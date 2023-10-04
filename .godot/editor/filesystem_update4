@@ -1,11 +1,13 @@
+res://Player/player.tscn
+res://Player/player.gd
+res://Objects/exp_gem.tscn
+res://Objects/exp_gem.gd
+res://World/world.tscn
 res://World/Barrel/Barrel.tscn
 res://Enemy/enemy.tscn
-res://Player/player.tscn
 res://Player/Attack/ice_spear.tscn
-res://World/world.tscn
 res://Utility/hurtbox.tscn
 res://Enemy/explosion.tscn
 res://Player/Attack/tornado.tscn
 res://Player/Attack/javelin.tscn
-res://Player/Attack/javelin.gd
-res://Player/player.gd
+res://Enemy/enemy.gd
