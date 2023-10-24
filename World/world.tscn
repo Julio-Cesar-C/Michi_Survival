@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://f11bjjmnucfe"]
+[gd_scene load_steps=7 format=3 uid="uid://f11bjjmnucfe"]
 
 [ext_resource type="Texture2D" uid="uid://ul3kgy1fcjc4" path="res://Textures/dirt_full_new.png" id="1_eyp4y"]
 [ext_resource type="PackedScene" uid="uid://dc5idfx3sqslo" path="res://Player/player.tscn" id="2_573f7"]
 [ext_resource type="PackedScene" uid="uid://d12b7afiqjocc" path="res://World/Barrel/Barrel.tscn" id="2_oniam"]
 [ext_resource type="PackedScene" uid="uid://dwskanohql2qt" path="res://Utility/enemy_spawner.tscn" id="3_id8fh"]
 [ext_resource type="AudioStream" uid="uid://dibd4p5wghny2" path="res://Audio/Music/battleThemeA.mp3" id="5_6c1pv"]
+[ext_resource type="PackedScene" uid="uid://cttbtvlahlyvy" path="res://Objects/exp_gem.tscn" id="6_h78ip"]
 
 [node name="World" type="Node2D"]
 
@@ -202,3 +203,7 @@ volume_db = -30.0
 autoplay = true
 
 [node name="Loot" type="Node2D" parent="." groups=["loot"]]
+
+[node name="ExpGem" parent="Loot" instance=ExtResource("6_h78ip")]
+position = Vector2(61, -47)
+exp = 20
