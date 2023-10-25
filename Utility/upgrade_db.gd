@@ -101,7 +101,7 @@ const UPGRADES = {
 	},
 	"armor1": {
 		"icon": ICON_PATH + "helmet_1.png",
-		"displayname": "Armor",
+		"displayname": "Armadura",
 		"details": "Reduz o dano recebido em 1 ponto",
 		"level": "Level: 1",
 		"prerequisite": [],
@@ -109,7 +109,7 @@ const UPGRADES = {
 	},
 	"armor2": {
 		"icon": ICON_PATH + "helmet_1.png",
-		"displayname": "Armor",
+		"displayname": "Armadura",
 		"details": "Reduz o dano recebido em um adicional de 1 ponto",
 		"level": "Level: 2",
 		"prerequisite": ["armor1"],
@@ -117,7 +117,7 @@ const UPGRADES = {
 	},
 	"armor3": {
 		"icon": ICON_PATH + "helmet_1.png",
-		"displayname": "Armor",
+		"displayname": "Armadura",
 		"details": "Reduz o dano recebido em um adicional de 1 ponto",
 		"level": "Level: 3",
 		"prerequisite": ["armor2"],
@@ -125,7 +125,7 @@ const UPGRADES = {
 	},
 	"armor4": {
 		"icon": ICON_PATH + "helmet_1.png",
-		"displayname": "Armor",
+		"displayname": "Armadura",
 		"details": "Reduz o dano recebido em um adicional de 1 ponto",
 		"level": "Level: 4",
 		"prerequisite": ["armor3"],
@@ -133,7 +133,7 @@ const UPGRADES = {
 	},
 	"speed1": {
 		"icon": ICON_PATH + "boots_4_green.png",
-		"displayname": "Speed",
+		"displayname": "Velocidade",
 		"details": "A velocidade de movimento é aumentada em 50% da velocidade base",
 		"level": "Level: 1",
 		"prerequisite": [],
@@ -141,7 +141,7 @@ const UPGRADES = {
 	},
 	"speed2": {
 		"icon": ICON_PATH + "boots_4_green.png",
-		"displayname": "Speed",
+		"displayname": "Velocidade",
 		"details": "A velocidade de movimento é aumentada em mais 50% da velocidade base",
 		"level": "Level: 2",
 		"prerequisite": ["speed1"],
@@ -149,7 +149,7 @@ const UPGRADES = {
 	},
 	"speed3": {
 		"icon": ICON_PATH + "boots_4_green.png",
-		"displayname": "Speed",
+		"displayname": "Velocidade",
 		"details": "A velocidade de movimento é aumentada em mais 50% da velocidade base",
 		"level": "Level: 3",
 		"prerequisite": ["speed2"],
@@ -157,7 +157,7 @@ const UPGRADES = {
 	},
 	"speed4": {
 		"icon": ICON_PATH + "boots_4_green.png",
-		"displayname": "Speed",
+		"displayname": "Velocidade",
 		"details": "A velocidade de movimento é aumentada em mais 50% da velocidade base",
 		"level": "Level: 4",
 		"prerequisite": ["speed3"],
@@ -165,7 +165,7 @@ const UPGRADES = {
 	},
 	"tome1": {
 		"icon": ICON_PATH + "thick_new.png",
-		"displayname": "Tome",
+		"displayname": "Tomo",
 		"details": "Aumenta o tamanho das magias em 10% do tamanho base",
 		"level": "Level: 1",
 		"prerequisite": [],
@@ -173,7 +173,7 @@ const UPGRADES = {
 	},
 	"tome2": {
 		"icon": ICON_PATH + "thick_new.png",
-		"displayname": "Tome",
+		"displayname": "Tomo",
 		"details": "Aumenta o tamanho das magias em mais 10% do tamanho base",
 		"level": "Level: 2",
 		"prerequisite": ["tome1"],
@@ -181,7 +181,7 @@ const UPGRADES = {
 	},
 	"tome3": {
 		"icon": ICON_PATH + "thick_new.png",
-		"displayname": "Tome",
+		"displayname": "Tomo",
 		"details": "Aumenta o tamanho das magias em mais 10% do tamanho base",
 		"level": "Level: 3",
 		"prerequisite": ["tome2"],
@@ -189,7 +189,7 @@ const UPGRADES = {
 	},
 	"tome4": {
 		"icon": ICON_PATH + "thick_new.png",
-		"displayname": "Tome",
+		"displayname": "Tomo",
 		"details": "Aumenta o tamanho das magias em mais 10% do tamanho base",
 		"level": "Level: 4",
 		"prerequisite": ["tome3"],
@@ -197,7 +197,7 @@ const UPGRADES = {
 	},
 	"scroll1": {
 		"icon": ICON_PATH + "scroll_old.png",
-		"displayname": "Scroll",
+		"displayname": "Pergaminho",
 		"details": "Diminui o cooldown das magias em 5% do tempo base",
 		"level": "Level: 1",
 		"prerequisite": [],
@@ -205,7 +205,7 @@ const UPGRADES = {
 	},
 	"scroll2": {
 		"icon": ICON_PATH + "scroll_old.png",
-		"displayname": "Scroll",
+		"displayname": "Pergaminho",
 		"details": "Diminui o cooldown das magias em mais 5% do tempo base",
 		"level": "Level: 2",
 		"prerequisite": ["scroll1"],
@@ -213,7 +213,7 @@ const UPGRADES = {
 	},
 	"scroll3": {
 		"icon": ICON_PATH + "scroll_old.png",
-		"displayname": "Scroll",
+		"displayname": "Pergaminho",
 		"details": "Diminui o cooldown das magias em mais 5% do tempo base",
 		"level": "Level: 3",
 		"prerequisite": ["scroll2"],
@@ -221,7 +221,7 @@ const UPGRADES = {
 	},
 	"scroll4": {
 		"icon": ICON_PATH + "scroll_old.png",
-		"displayname": "Scroll",
+		"displayname": "Pergaminho",
 		"details": "Diminui o cooldown das magias em mais 5% do tempo base",
 		"level": "Level: 4",
 		"prerequisite": ["scroll3"],
@@ -229,7 +229,7 @@ const UPGRADES = {
 	},
 	"ring1": {
 		"icon": ICON_PATH + "urand_mage.png",
-		"displayname": "Ring",
+		"displayname": "Anel",
 		"details": "Suas magias lançam mais 1 ataque",
 		"level": "Level: 1",
 		"prerequisite": [],
@@ -237,7 +237,7 @@ const UPGRADES = {
 	},
 	"ring2": {
 		"icon": ICON_PATH + "urand_mage.png",
-		"displayname": "Ring",
+		"displayname": "Anel",
 		"details": "Suas magias lançam mais 1 ataque",
 		"level": "Level: 2",
 		"prerequisite": ["ring1"],
@@ -245,8 +245,8 @@ const UPGRADES = {
 	},
 	"food": {
 		"icon": ICON_PATH + "chunk.png",
-		"displayname": "Food",
-		"details": "Heals you for 20 health",
+		"displayname": "Comida",
+		"details": "Deliciosa Carne que te cura 20 de hp",
 		"level": "N/A",
 		"prerequisite": [],
 		"type": "item"

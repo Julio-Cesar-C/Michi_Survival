@@ -1,11 +1,12 @@
-Node
-Label
+GridContainer
 TextureRect
+Label
+TextureProgressBar
+Node
 ColorRect
 AudioStreamPlayer
 VBoxContainer
 Panel
-TextureProgressBar
 Control
 CanvasLayer
 CollisionShape2D

@@ -1,7 +1,5 @@
 res://Utility/upgrade_db.tscn
 res://Utility/upgrade_db.gd
-res://Utility/item_option.tscn
-res://Utility/item_option.gd
 res://World/Barrel/Barrel.tscn
 res://Enemy/enemy.tscn
 res://Player/player.tscn
@@ -11,7 +9,9 @@ res://Utility/hurtbox.tscn
 res://Player/Attack/tornado.tscn
 res://Player/Attack/javelin.tscn
 res://Objects/exp_gem.tscn
+res://Utility/item_option.tscn
 res://Player/player.gd
-res://Player/Attack/ice_spear.gd
-res://Player/Attack/tornado.gd
-res://Player/Attack/javelin.gd
+res://Utility/enemy_spawner.tscn
+res://Utility/enemy_spawner.gd
+res://Player/GUI/item_container.tscn
+res://Player/GUI/item_container.gd
