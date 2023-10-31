@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bypcvpd06qvtk"]
+
+[ext_resource type="FontFile" uid="uid://dnkhxg4vqpfx1" path="res://Font/tenderness.otf" id="1_ufpdm"]
+[ext_resource type="Script" path="res://TitleScreen/menu.gd" id="1_v4kq2"]
+[ext_resource type="PackedScene" uid="uid://fumkjyij46qi" path="res://Utility/basic_button.tscn" id="2_sew7h"]
+[ext_resource type="Texture2D" uid="uid://c2vsusuw0wfsj" path="res://TitleScreen/Png.png" id="4_lfs3n"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v4kq2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 366.0
+color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_ufpdm")
+theme_override_font_sizes/font_size = 72
+text = "Michi Survival"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_play" parent="." instance=ExtResource("2_sew7h")]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 250.0
+offset_right = 360.0
+offset_bottom = 280.0
+text = "Jogar
+"
+
+[node name="btn_exit" parent="." instance=ExtResource("2_sew7h")]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 290.0
+offset_right = 360.0
+offset_bottom = 320.0
+text = "Sair"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 123.0
+offset_bottom = 104.0
+texture = ExtResource("4_lfs3n")
+expand_mode = 1
+
+[connection signal="click_end" from="btn_play" to="." method="_on_btn_play_click_end"]
+[connection signal="click_end" from="btn_exit" to="." method="_on_btn_exit_click_end"]

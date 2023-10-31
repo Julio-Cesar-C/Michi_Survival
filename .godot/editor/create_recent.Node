@@ -1,10 +1,11 @@
-GridContainer
 TextureRect
 Label
-TextureProgressBar
-Node
 ColorRect
 AudioStreamPlayer
+Button
+GridContainer
+TextureProgressBar
+Node
 VBoxContainer
 Panel
 Control

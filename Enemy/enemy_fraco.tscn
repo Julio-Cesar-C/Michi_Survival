@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcc7nnf0jfvbx"]
+
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_seuhp"]
+[ext_resource type="Texture2D" uid="uid://4dcy565inwx2" path="res://Textures/Enemy/pipo-nekonin021.png" id="2_o4go1"]
+[ext_resource type="PackedScene" uid="uid://bn8isi6klgfbd" path="res://Utility/hurtbox.tscn" id="3_srn5m"]
+[ext_resource type="PackedScene" uid="uid://dhyeoww8rxa4y" path="res://Utility/hitbox.tscn" id="4_glq3a"]
+[ext_resource type="AudioStream" uid="uid://djjify4h1c5p3" path="res://Audio/SoundEffect/enemy_hit.ogg" id="5_n2yol"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nnee"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="Animation" id="Animation_8eof6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dh4gy"]
+resource_name = "Walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0eq8c"]
+_data = {
+"RESET": SubResource("Animation_8eof6"),
+"Walk": SubResource("Animation_dh4gy")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrb6s"]
+size = Vector2(18, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7xgu"]
+size = Vector2(16, 18)
+
+[node name="enemy_fraco" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_seuhp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_o4go1")
+hframes = 3
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_8nnee")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0eq8c")
+}
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_srn5m")]
+collision_layer = 4
+collision_mask = 4
+HurtBoxType = 1
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vrb6s")
+
+[node name="Hitbox" parent="." instance=ExtResource("4_glq3a")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_f7xgu")
+
+[node name="snd_hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_n2yol")
+volume_db = -20.0
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
